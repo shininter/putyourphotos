@@ -1,7 +1,7 @@
 <template>
   <div id="app">
      <shincatlogo></shincatlogo>
-      <div v-for='(item,index) in rects' :style='item.style' class="rect"  :key='index'>{{index}}</div>
+      <div v-for='(item,index) in rects' :style='item.style' class="rect"  :key='index'></div>
   </div>
 </template>
 
@@ -24,11 +24,7 @@ export default {
 
 
 
-      let rect=new Rect(300,300,Math.random()*30+30,Math.random()*30+30);
-      //存储样式对象
-      this.rects.push(new StyleProxy(rect));
-      //存储矩形对象
-      this.recttemp.push(rect);
+     
 
       ShinTimeLine.addEventListener('frame',this.handleframe,this);
       this.rectrender();
@@ -42,11 +38,18 @@ export default {
     }
   },
   mounted() {
-    let num=10;
-    let interval = setInterval(()=>{
+    
+     let rect=new Rect(300,300,Math.random()*30+30,Math.random()*30+30);
+      //存储样式对象
+      this.rects.push(new StyleProxy(rect));
+      //存储矩形对象
+      this.recttemp.push(rect);
+      let num=10;
+      let interval = setInterval(()=>{
       num--;
       if(num<0) clearInterval(interval);
       this.addNewRect()},1500);
+      
   },
   methods:{
     rectrender(){
@@ -96,17 +99,19 @@ html,body{
   overflow: hidden;
   position: relative;
   color: #ffffff;
+  
 }
 .rect{
   position: absolute;
   top:0px;
   left: 0px;
-  transition: all .5s;
+  transition: all .5s;  
   border-width: 2px;
   border: #ffffff;
   border-style:solid;
   /*内边框*/
   box-sizing: border-box;
+  box-shadow: 0 5px 5px rgba(125,125,125,0.8);
   
 }
 </style>

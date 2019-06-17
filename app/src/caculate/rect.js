@@ -62,7 +62,9 @@ class Rect {
         let p2=rc2.center;
         let discenterx=Math.abs(p1.x-p2.x);
         let discentery=Math.abs(p1.y-p2.y);
-        if(discenterx<=(rc1.width+rc2.width)/2 && discentery <= (rc1.height+rc2.height)/2)
+        if(discenterx<=(rc1.width+rc2.width)/2 
+            && 
+        discentery <= (rc1.height+rc2.height)/2)
         {
             return true;
         }
