@@ -60,10 +60,9 @@ export default {
         this.rectrender();
     },
     addNewRect(){ 
+       let a=Math.random()*Math.PI*2;
+      let rect=new Rect(Math.cos(a)*500,Math.sin(a)*800,Math.random()*30+50,Math.random()*30+50);
       
-      let rect=new Rect(Math.random()-0.5,Math.random()-0.5,Math.random()*30+30,Math.random()*30+30);
-      rect.x*=1000+500;
-      rect.y*=2000;
       
       let mxx=rect.clone();
      

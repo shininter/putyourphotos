@@ -67,7 +67,7 @@ class core{
        
         }
         //二叉树轮训次数
-        let cumn=10;
+        let cumn=7;
         let isCatch=true;
         disx=disx>>1;
         disy=disy>>1;
